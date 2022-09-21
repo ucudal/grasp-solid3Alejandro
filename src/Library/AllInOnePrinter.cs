@@ -8,17 +8,17 @@ using System.IO;
 
 namespace Full_GRASP_And_SOLID.Library
 {
-    public enum Destination
+   /*  public enum Destination
     {
         Console,
         File
-    }
+    } */
 
     public class AllInOnePrinter
     {
-        public void PrintRecipe(Recipe recipe, Destination destination)
+        public void PrintRecipe(Recipe recipe,IPrintMode printer)
         {
-            if (destination == Destination.Console)
+            /*if (destination == Destination.Console)
             {
                 Console.WriteLine(recipe.GetTextToPrint());
             }
@@ -26,6 +26,9 @@ namespace Full_GRASP_And_SOLID.Library
             {
                 File.WriteAllText("Recipe.txt", recipe.GetTextToPrint());
             }
+            No puede preguntar el tipo*/
+
+
         }
     }
 }

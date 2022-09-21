@@ -26,9 +26,13 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
 
-            AllInOnePrinter printer = new AllInOnePrinter();
-            printer.PrintRecipe(recipe, Destination.Console);
-            printer.PrintRecipe(recipe, Destination.File);
+            IPrintMode p1 = new ConsolePrinter();
+            IPrintMode p2 = new FilePrinter();          //aqui podemos ver como se cumple el polimorfismo y el lsp ya que los subtipos imprimen la misma info
+            p2.Print(recipe);
+            p1.Print(recipe);
+
+
+          
         }
 
         private static void PopulateCatalogs()
